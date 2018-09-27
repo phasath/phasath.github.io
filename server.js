@@ -5,7 +5,7 @@ const app = express();
 let dirPath = __dirname + "/dist";
 
 
-const SERVER_PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(compression())
 app.use(express.json());
@@ -23,6 +23,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-console.log('Listening on: ' + SERVER_PORT);
-console.log('Access here: http://localhost:' + SERVER_PORT);
-var server = app.listen(SERVER_PORT)
+console.log('Listening on: ' + PORT);
+console.log('Access here: http://localhost:' + PORT);
+var server = app.listen(PORT)
